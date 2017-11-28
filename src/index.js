@@ -18,7 +18,7 @@ async function consume() {
 
     channel.consume(QUEUE, message => {
       if (message !== null) {
-        logger.info(Buffer.from(message))
+        logger.info(Buffer.from(message.content))
 
         channel.ack(message)
       }
